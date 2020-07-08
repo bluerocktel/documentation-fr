@@ -5,5 +5,5 @@ nav:
       - 'Messages unitaires': sms-messages-unitaires.md
       - 'Listes de diffusions': sms-listes-de-diffusion.md
 theme:
-  name: material
+  name: readthedocs
   custom_dir: overrides

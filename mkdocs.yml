@@ -1,4 +1,5 @@
-site_name: Encom API
+site_name: API Clients Encom
 nav:
   - SMS: sms-messages-unitaires.md
+  - SMS: sms-listes-de-diffusion.md
 theme: readthedocs

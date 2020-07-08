@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - API SMS:
       - 'Messages unitaires': sms-messages-unitaires.md
-      - 'Listes de diffusions': sms-listes-de-diffusion.md
+      - 'Listes de diffusion': sms-listes-de-diffusion.md
 theme:
   name: readthedocs
+  custom_dir: override

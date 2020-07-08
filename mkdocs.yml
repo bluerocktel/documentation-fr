@@ -1,0 +1,4 @@
+site_name: Encom API
+nav:
+  - SMS: sms-messages-unitaires.md
+theme: readthedocs

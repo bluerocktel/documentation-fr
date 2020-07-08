@@ -6,4 +6,3 @@ nav:
       - 'Listes de diffusions': sms-listes-de-diffusion.md
 theme:
   name: readthedocs
-  custom_dir: overrides

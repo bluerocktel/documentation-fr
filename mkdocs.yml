@@ -4,4 +4,6 @@ nav:
   - API SMS:
       - 'Messages unitaires': sms-messages-unitaires.md
       - 'Listes de diffusions': sms-listes-de-diffusion.md
-theme: readthedocs
+theme:
+  name: material
+  custom_dir: overrides

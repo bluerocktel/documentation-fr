@@ -75,6 +75,60 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creer-une-nouvelle-liste-de-diffusion">Créer une nouvelle liste de diffusion</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parametres_1">Paramètres :</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples-de-requete_1">Exemples de requête</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#curl_1">Curl :</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#php_1">PHP :</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python_1">Python :</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-de-reponse_1">Exemple de réponse</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#renommer-une-nouvelle-liste-de-diffusion">Renommer une nouvelle liste de diffusion</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parametres_2">Paramètres :</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples-de-requete_2">Exemples de requête</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#curl_2">Curl :</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#php_2">PHP :</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python_2">Python :</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-de-reponse_2">Exemple de réponse</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#supprimer-une-nouvelle-liste-de-diffusion">Supprimer une nouvelle liste de diffusion</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parametres_3">Paramètres :</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples-de-requete_3">Exemples de requête</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#curl_3">Curl :</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#php_3">PHP :</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python_3">Python :</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-de-reponse_3">Exemple de réponse</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -119,7 +173,7 @@
 <p><strong>GET /api/v1/sms/recipientLists</strong></p>
 <h4 id="parametres">Paramètres :</h4>
 <ul>
-<li>customerAccout : compte client Encom.</li>
+<li>customerAccount * : compte client Encom.</li>
 </ul>
 <h4 id="exemples-de-requete">Exemples de requête</h4>
 <h5 id="curl">Curl :</h5>
@@ -200,6 +254,222 @@ print(data.decode(&quot;utf-8&quot;))
     &quot;updated_at&quot;: &quot;2020-07-08 06:49:40&quot;
   }
 ]
+</code></pre>
+
+<h3 id="creer-une-nouvelle-liste-de-diffusion">Créer une nouvelle liste de diffusion</h3>
+<p><strong>POST /api/v1/sms/recipientLists</strong></p>
+<h4 id="parametres_1">Paramètres :</h4>
+<ul>
+<li>customerAccount * : compte client Encom</li>
+<li>name * : nom de la liste de diffusion</li>
+</ul>
+<h4 id="exemples-de-requete_1">Exemples de requête</h4>
+<h5 id="curl_1">Curl :</h5>
+<pre><code>curl --request POST \
+  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;name=Test%20%2B%2B%2B&amp;id=7' \
+  --header 'authorization: Bearer {token} '
+</code></pre>
+
+<h5 id="php_1">PHP :</h5>
+<pre><code>&lt;?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL =&gt; &quot;https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;name=Test%20%2B%2B%2B&amp;id=7&quot;,
+  CURLOPT_RETURNTRANSFER =&gt; true,
+  CURLOPT_ENCODING =&gt; &quot;&quot;,
+  CURLOPT_MAXREDIRS =&gt; 10,
+  CURLOPT_TIMEOUT =&gt; 30,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; &quot;POST&quot;,
+  CURLOPT_POSTFIELDS =&gt; &quot;&quot;,
+  CURLOPT_HTTPHEADER =&gt; array(
+    &quot;authorization: Bearer {token} &quot;
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo &quot;cURL Error #:&quot; . $err;
+} else {
+  echo $response;
+}
+</code></pre>
+
+<h5 id="python_1">Python :</h5>
+<pre><code>import http.client
+
+conn = http.client.HTTPSConnection(&quot;telecom0525-clients.bluerocktel.net&quot;)
+
+payload = &quot;&quot;
+
+headers = { 'authorization': &quot;Bearer {token} &quot; }
+
+conn.request(&quot;POST&quot;, &quot;/api/v1/sms/recipientLists?customerAccount=CL3578&amp;name=Test%20%2B%2B%2B&amp;id=7&quot;, payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode(&quot;utf-8&quot;))
+</code></pre>
+
+<h4 id="exemple-de-reponse_1">Exemple de réponse</h4>
+<p>Lorsque la liste est créée avec succès, l'API retourne un code "201 Created" ainsi qu'un tableau contenant l'id et le nom de la nouvelle liste :</p>
+<pre><code>{
+  &quot;id&quot;: 9,
+  &quot;name&quot;: &quot;Test Cyrille&quot;
+}
+</code></pre>
+
+<h3 id="renommer-une-nouvelle-liste-de-diffusion">Renommer une nouvelle liste de diffusion</h3>
+<p><strong>PUT /api/v1/sms/recipientLists</strong></p>
+<h4 id="parametres_2">Paramètres :</h4>
+<ul>
+<li>customerAccount * : compte client Encom</li>
+<li>id * : id de la liste de diffusion</li>
+<li>name * : nouveau nom de la liste de diffusion</li>
+</ul>
+<h4 id="exemples-de-requete_2">Exemples de requête</h4>
+<h5 id="curl_2">Curl :</h5>
+<pre><code>curl --request PUT \
+  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;name=Test%20%2B%2B%2B&amp;id=7' \
+  --header 'authorization: Bearer {token} '
+</code></pre>
+
+<h5 id="php_2">PHP :</h5>
+<pre><code>&lt;?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL =&gt; &quot;https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;name=Test%20%2B%2B%2B&amp;id=7&quot;,
+  CURLOPT_RETURNTRANSFER =&gt; true,
+  CURLOPT_ENCODING =&gt; &quot;&quot;,
+  CURLOPT_MAXREDIRS =&gt; 10,
+  CURLOPT_TIMEOUT =&gt; 30,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; &quot;PUT&quot;,
+  CURLOPT_POSTFIELDS =&gt; &quot;&quot;,
+  CURLOPT_HTTPHEADER =&gt; array(
+    &quot;authorization: Bearer {token} &quot;
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo &quot;cURL Error #:&quot; . $err;
+} else {
+  echo $response;
+}
+</code></pre>
+
+<h5 id="python_2">Python :</h5>
+<pre><code>import http.client
+
+conn = http.client.HTTPSConnection(&quot;telecom0525-clients.bluerocktel.net&quot;)
+
+payload = &quot;&quot;
+
+headers = { 'authorization': &quot;Bearer {token} &quot; }
+
+conn.request(&quot;PUT&quot;, &quot;/api/v1/sms/recipientLists?customerAccount=CL3578&amp;name=Test%20%2B%2B%2B&amp;id=7&quot;, payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode(&quot;utf-8&quot;))
+</code></pre>
+
+<h4 id="exemple-de-reponse_2">Exemple de réponse</h4>
+<p>Lorsque la liste est créée avec succès, l'API retourne un code "200 ok" ainsi qu'un tableau contenant l'id et le nouveau nom de la liste :</p>
+<pre><code>{
+  &quot;id&quot;: 9,
+  &quot;name&quot;: &quot;Nouveau nom de la liste&quot;
+}
+</code></pre>
+
+<h3 id="supprimer-une-nouvelle-liste-de-diffusion">Supprimer une nouvelle liste de diffusion</h3>
+<p><strong>DELETE /api/v1/sms/recipientLists</strong></p>
+<h4 id="parametres_3">Paramètres :</h4>
+<ul>
+<li>customerAccount * : compte client Encom</li>
+<li>id * : id de la liste de diffusion</li>
+</ul>
+<h4 id="exemples-de-requete_3">Exemples de requête</h4>
+<h5 id="curl_3">Curl :</h5>
+<pre><code>curl --request DELETE \
+  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;id=7' \
+  --header 'authorization: Bearer {token} '
+</code></pre>
+
+<h5 id="php_3">PHP :</h5>
+<pre><code>&lt;?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL =&gt; &quot;https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;id=7&quot;,
+  CURLOPT_RETURNTRANSFER =&gt; true,
+  CURLOPT_ENCODING =&gt; &quot;&quot;,
+  CURLOPT_MAXREDIRS =&gt; 10,
+  CURLOPT_TIMEOUT =&gt; 30,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; &quot;DELETE&quot;,
+  CURLOPT_POSTFIELDS =&gt; &quot;&quot;,
+  CURLOPT_HTTPHEADER =&gt; array(
+    &quot;authorization: Bearer {token} &quot;
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo &quot;cURL Error #:&quot; . $err;
+} else {
+  echo $response;
+}
+</code></pre>
+
+<h5 id="python_3">Python :</h5>
+<pre><code>import http.client
+
+conn = http.client.HTTPSConnection(&quot;telecom0525-clients.bluerocktel.net&quot;)
+
+payload = &quot;&quot;
+
+headers = { 'authorization': &quot;Bearer {token} &quot; }
+
+conn.request(&quot;DELETE&quot;, &quot;/api/v1/sms/recipientLists?customerAccount=CL3578&amp;id=7&quot;, payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode(&quot;utf-8&quot;))
+</code></pre>
+
+<h4 id="exemple-de-reponse_3">Exemple de réponse</h4>
+<p>Lorsque la liste est supprimée, l'API retourne un code "200 OK" ainsi que le message "deleted" :</p>
+<pre><code>{
+  &quot;response&quot;: &quot;deleted&quot;
+}
+</code></pre>
+
+<p>Lorsque la liste n'existe pas, l'API retourne un code "404 Not found"  ainsi que le message "not found" :</p>
+<pre><code>{
+  &quot;response&quot;: &quot;not found&quot;
+}
 </code></pre>
               
             </div>

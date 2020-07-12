@@ -1,6 +1,6 @@
 ## Messages unitaires
 
-### Envoyer un message unitaire**
+### Envoyer un message unitaire
 
 **POST /api/v1/sms/singleMessage**
 
@@ -12,6 +12,8 @@
 - type * : type du message, 't' pour 'transactionnel' ou 'm' pour marketing
 - idSend: campagne d'envoi (facultatif)
 - listener: url recevant la notification de résultat du message (facultatif)
+
+Note : le paramètre 'customerAccount', qui correspond au compte client Encom, doit être passé dans toutes les requêtes vers l'API Clients Encom. En effet, le jeton d'identification est personnel et son détenteur peut dans certains cas avoir accès à plusieurs comptes clients.
 
 #### Exemples de requête
 

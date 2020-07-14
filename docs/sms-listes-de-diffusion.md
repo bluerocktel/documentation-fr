@@ -261,7 +261,7 @@ Lorsque la liste est créée avec succès, l'API retourne un code "200 ok" ainsi
 }
 ```
 
-### Supprimer une nouvelle liste de diffusion
+### Supprimer une liste de diffusion
 
 **DELETE /api/v1/sms/recipientLists**
 

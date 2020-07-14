@@ -60,6 +60,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#envoyer-un-message-unitaire">Envoyer un message unitaire</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#parametres">Paramètres</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mention-obligatoire-stop-au-36111">Mention obligatoire "STOP AU 36111"</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#exemples-de-requete">Exemples de requête</a>
         <ul>
@@ -134,11 +138,13 @@
 <li>idSend: campagne d'envoi (facultatif)</li>
 <li>listener: url recevant la notification de résultat du message (facultatif)</li>
 </ul>
-<p>Note : le paramètre 'customerAccount', qui correspond au compte client Encom, doit être passé dans toutes les requêtes vers l'API Clients Encom. En effet, le jeton d'identification est personnel et son détenteur peut dans certains cas avoir accès à plusieurs comptes clients.</p>
+<p>Note : le paramètre "customerAccount", qui correspond au compte client Encom, doit être passé dans toutes les requêtes vers l'API Clients Encom. En effet, le jeton d'identification est personnel et son détenteur peut dans certains cas avoir accès à plusieurs comptes clients.</p>
+<h5 id="mention-obligatoire-stop-au-36111">Mention obligatoire "STOP AU 36111"</h5>
+<p>Attention : pour tout envoi de message à caractère marketing (type 'm'), la mention "STOP AU 36111" est obligatoire afin de fournir à vos destinataires un moyen de désinscription et de respecter les obligations de la CNIL. Lorsque vous postez un message de type marketing sur l'API en omettant cette mention, elle est automatiquement ajoutée à la fin de votre message.</p>
 <h4 id="exemples-de-requete">Exemples de requête</h4>
 <h5 id="curl">Curl</h5>
 <pre><code>curl --request POST \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;recipient=0603790931&amp;message=Hello%20World!&amp;type=t&amp;=' \
+  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;recipient=06********&amp;message=Hello%20World!&amp;type=t&amp;=' \
   --header 'authorization: Bearer {token} '
 </code></pre>
 
@@ -148,7 +154,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL =&gt; &quot;https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;recipient=0603790931&amp;message=Hello%20World!&amp;type=t&amp;=&quot;,
+  CURLOPT_URL =&gt; &quot;https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;recipient=06********&amp;message=Hello%20World!&amp;type=t&amp;=&quot;,
   CURLOPT_RETURNTRANSFER =&gt; true,
   CURLOPT_ENCODING =&gt; &quot;&quot;,
   CURLOPT_MAXREDIRS =&gt; 10,
@@ -182,7 +188,7 @@ payload = &quot;&quot;
 
 headers = { 'authorization': &quot;Bearer {token} &quot; }
 
-conn.request(&quot;POST&quot;, &quot;/api/v1/sms/singleMessage?customerAccount=CL3578&amp;recipient=0603790931&amp;message=Hello%20World!&amp;type=t&amp;=&quot;, payload, headers)
+conn.request(&quot;POST&quot;, &quot;/api/v1/sms/singleMessage?customerAccount=CL3578&amp;recipient=06********&amp;message=Hello%20World!&amp;type=t&amp;=&quot;, payload, headers)
 
 res = conn.getresponse()
 data = res.read()

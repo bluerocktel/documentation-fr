@@ -96,3 +96,5 @@ Lorsque les messages sont planifiés avec succès, l'API retourne un code "201 C
   "store": "22,23"
 }
 ```
+
+Vous pouvez ensuite obtenir le statut de chaque message envoyé en utilisant le  [endpoint GET /api/v1/sms/singleMessage](sms-messages-unitaires.md)

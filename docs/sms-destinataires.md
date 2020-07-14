@@ -160,12 +160,4 @@ Si le destinataire, identifié par son numéro de téléphone mobile, n'existe p
 
 Si le destinataire, identifié par son numéro de téléphone mobile, existe déjà dans votre compte, il n'est pas dupliqué mais attaché à liste passée en paramètre. Un même destinataire peut ainsi exister dans plusieurs listes de diffusion.
 
-Dans les 2 cas, l'API retourne un code "201 Creates'
-
-Lorsque les messages sont planifiés avec succès, l'API retourne un code "201 Created" ainsi que les ids des messages :
-
-```
-{
-  "store": "22,23"
-}
-```
+Dans les 2 cas, l'API retourne un code "201 Created'.

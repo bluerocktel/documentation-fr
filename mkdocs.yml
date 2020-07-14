@@ -9,6 +9,7 @@ nav:
       - 'Messages unitaires': sms-messages-unitaires.md
       - 'Messages vers une liste de diffusion': sms-messages-listes.md
       - 'Listes de diffusion': sms-listes-de-diffusion.md
+      - 'Configuration de listener': sms-listener.md
 theme:
   name: readthedocs
   custom_dir: override

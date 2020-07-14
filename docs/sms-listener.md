@@ -1,6 +1,8 @@
-## Listener
+## Configuration d'un listener
 
-Nous vous recommandons d'ouvrir une route dans votre système d'information vers laquelle nous pourrons notifier les statuts d'envoi des messages.
+Les statistiques d'envoi de vos messages sont mises à jour directement dans votre Espace Client Encom, et vous pouvez, au travers de l'API, récupérer le statut des messages.
+
+Vous pouvez également être notifié en temps réel du statut de vos messages, en ouvrant une route spécifique dans votre système d'information.
 
 Une fois votre url fonctionnelle, vous pouvez l'utiliser dans vos envois de messages unitaires ou groupés.
 

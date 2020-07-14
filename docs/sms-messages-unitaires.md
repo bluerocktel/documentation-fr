@@ -1,5 +1,7 @@
 ## Messages unitaires
 
+---
+
 ### Envoyer un message unitaire
 
 **POST /api/v1/sms/singleMessage**

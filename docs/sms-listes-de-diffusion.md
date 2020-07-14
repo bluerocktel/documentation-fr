@@ -1,4 +1,6 @@
-## Listes de diffusion
+## Gestion des listes de diffusion
+
+---
 
 ### Obtenir les listes de diffusion disponibles
 
@@ -97,6 +99,8 @@ print(data.decode("utf-8"))
 ]
 ```
 
+---
+
 ### Créer une nouvelle liste de diffusion
 
 **POST /api/v1/sms/recipientLists**
@@ -179,7 +183,9 @@ Lorsque la liste est créée avec succès, l'API retourne un code "201 Created" 
 }
 ```
 
-### Renommer une nouvelle liste de diffusion
+---
+
+### Renommer une liste de diffusion
 
 **PUT /api/v1/sms/recipientLists**
 
@@ -260,6 +266,8 @@ Lorsque la liste est créée avec succès, l'API retourne un code "200 ok" ainsi
   "name": "Nouveau nom de la liste"
 }
 ```
+
+---
 
 ### Supprimer une liste de diffusion
 

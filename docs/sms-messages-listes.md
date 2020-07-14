@@ -1,8 +1,8 @@
-Messages à une liste de diffusion
-===
+## Messages vers une liste de diffusion
 
-Envoyer un message à une liste de diffusion
 ---
+
+### Envoyer un message vers une liste de diffusion
 
 **POST /api/v1/sms/groupedMessage**
 

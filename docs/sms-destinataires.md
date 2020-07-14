@@ -1,5 +1,7 @@
 ## Destinataires
 
+---
+
 ### Obtenir les destinataires d'un liste de diffusion
 
 **GET /api/v1/sms/recipients**
@@ -81,6 +83,8 @@ L'API retourne un tableau contenant la liste des numéros, avec le nom correspon
   "00336********": "Jack"
 }
 ```
+
+---
 
 ### Ajouter un destinataire à une liste de diffusion
 

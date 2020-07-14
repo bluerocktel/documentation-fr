@@ -1,15 +1,14 @@
-#
+## Listener
 
-Nous vous conseillons de créer un listener qui nous permettra de vous informer du statut d'envoi de vos messages SMS.
+Nous vous recommandons d'ouvrir une route dans votre système d'information vers laquelle nous pourrons notifier les statuts d'envoi des messages.
 
+Une fois votre url fonctionnelle, vous pouvez l'utiliser dans vos envois de messages unitaires ou groupés.
 
-Voici les paramètres que nosu posterons sur cette url
-
-
-Voici les paramètres postés sur votre Url
-
+### Paramètres postés vers votre url
 
 - id : id du message
 - status (string) : status
 - details (string)
 - code (string)
+
+

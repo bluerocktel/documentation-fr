@@ -1,6 +1,8 @@
-## Messages à une liste de diffusion
+Messages à une liste de diffusion
+===
 
-### Envoyer un message à une liste de diffusion
+Envoyer un message à une liste de diffusion
+---
 
 **POST /api/v1/sms/groupedMessage**
 
@@ -14,6 +16,10 @@
 - listener: url recevant la notification de résultat du message (facultatif)
 
 Note : le paramètre 'customerAccount', qui correspond au compte client Encom, doit être passé dans toutes les requêtes vers l'API Clients Encom. En effet, le jeton d'identification est personnel et son détenteur peut dans certains cas avoir accès à plusieurs comptes clients.
+
+##### Mention obligatoire "STOP AU 36111"
+
+Attention : pour tout envoi de message à caractère marketing (type 'm'), la mention "STOP AU 36111" est obligatoire afin de fournir à vos destinataires un moyen de désinscription et de respecter les obligations de la CNIL. Lorsque vous postez un message de type marketing sur l'API en omettant cette mention, elle est automatiquement ajoutée à la fin de votre message.
 
 ##### Personnalisation des messages
 

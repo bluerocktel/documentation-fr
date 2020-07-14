@@ -13,7 +13,11 @@
 - idSend: campagne d'envoi (facultatif)
 - listener: url recevant la notification de résultat du message (facultatif)
 
-Note : le paramètre 'customerAccount', qui correspond au compte client Encom, doit être passé dans toutes les requêtes vers l'API Clients Encom. En effet, le jeton d'identification est personnel et son détenteur peut dans certains cas avoir accès à plusieurs comptes clients.
+Note : le paramètre "customerAccount", qui correspond au compte client Encom, doit être passé dans toutes les requêtes vers l'API Clients Encom. En effet, le jeton d'identification est personnel et son détenteur peut dans certains cas avoir accès à plusieurs comptes clients.
+
+##### Mention obligatoire "STOP AU 36111"
+
+Attention : pour tout envoi de message à caractère marketing (type 'm'), la mention "STOP AU 36111" est obligatoire afin de fournir à vos destinataires un moyen de désinscription et de respecter les obligations de la CNIL. Lorsque vous postez un message de type marketing sur l'API en omettant cette mention, elle est automatiquement ajoutée à la fin de votre message.
 
 #### Exemples de requête
 
@@ -21,7 +25,7 @@ Note : le paramètre 'customerAccount', qui correspond au compte client Encom, d
 
 ```
 curl --request POST \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=0603790931&message=Hello%20World!&type=t&=' \
+  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=06********&message=Hello%20World!&type=t&=' \
   --header 'authorization: Bearer {token} '
 ```
 
@@ -33,7 +37,7 @@ curl --request POST \
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=0603790931&message=Hello%20World!&type=t&=",
+  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=06********&message=Hello%20World!&type=t&=",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -69,7 +73,7 @@ payload = ""
 
 headers = { 'authorization': "Bearer {token} " }
 
-conn.request("POST", "/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=0603790931&message=Hello%20World!&type=t&=", payload, headers)
+conn.request("POST", "/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=06********&message=Hello%20World!&type=t&=", payload, headers)
 
 res = conn.getresponse()
 data = res.read()

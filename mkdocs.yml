@@ -8,7 +8,7 @@ nav:
       - 'Introduction': encom-api-sms.md
       - 'Messages unitaires': sms-messages-unitaires.md
       - 'Messages vers une liste de diffusion': sms-messages-listes.md
-      - 'Listes de diffusion': sms-listes-de-diffusion.md
+      - 'Gestion des listes de diffusion': sms-listes-de-diffusion.md
       - 'Gestion des destinataires': sms-destinataires.md
       - 'Configuration de listener': sms-listener.md
 theme:

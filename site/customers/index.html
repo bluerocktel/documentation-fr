@@ -60,6 +60,20 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#store-a-new-customer">Store a new customer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-request">Sample request:</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#curl">Curl:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-a-customer-from-customeraccount">Get a customer from customerAccount</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -103,6 +117,89 @@
 <ul>
 <li>customerAccount</li>
 </ul>
+<h3 id="store-a-new-customer">Store a new customer</h3>
+<p><strong>POST /api/v1/customers</strong></p>
+<h4 id="parameters_1">Parameters</h4>
+<p>The only mandatory parameter is the name:</p>
+<ul>
+<li>brand_id: branding attached to this customer, default 1</li>
+<li>representative_id: salesperson in charge of the customer</li>
+<li>customerAccount: customerAccount, automatically created if not provided</li>
+<li>accountsReference: reference in the accounting system, if different from customerAccount</li>
+<li>name*: name of the customer</li>
+<li>brand: trading name of the customer, if exists</li>
+<li>registrationNumber: registration number of the customer</li>
+<li>taxRegistrationNumber: tax registration number of the customer</li>
+<li>type: type of company</li>
+<li>capital: capital in your currency,</li>
+<li>mainAddressLine1</li>
+<li>mainAddressLine2</li>
+<li>mainAddressCity</li>
+<li>mainAddressCountry</li>
+<li>website</li>
+<li>active: boolean, default <em>true</em></li>
+<li>isReseller : boolean, default <em>false</em></li>
+<li>resellerLevel: integer,</li>
+<li>chargeVAT: boolean, default <em>true</em> (set to <em>false</em> if you are not charging VAT to this customer)</li>
+<li>applyVATAutoReverseOperators: boolean, default false (set to <em>true</em> if you apply auto-reverse for VAT for this customer on Telecom services)</li>
+<li>onCallDuty: boolean, default <em>false</em> (set to <em>true</em> if the customer is under on call duty contract)</li>
+<li>vip: boolean, default <em>false</em> (set to <em>true</em> if customer is vip)</li>
+</ul>
+<h4 id="sample-request">Sample request:</h4>
+<h5 id="curl">Curl:</h5>
+<p>```curl --request POST \
+     --url 'https://bluerockteladmin.test/api/v1/customers?name=Soci%C3%A9t%C3%A9&amp;customerAccount=123456' \
+     --header 'authorization: Bearer {token}'</p>
+<pre><code>
+##### PHP:
+
+</code></pre>
+
+<?php
+
+<p>$curl = curl_init();</p>
+<p>curl_setopt_array($curl, array(
+     CURLOPT_URL =&gt; "https://bluerockteladmin.test/api/v1/customers?name=Soci%C3%A9t%C3%A9&amp;customerAccount=123456",
+     CURLOPT_RETURNTRANSFER =&gt; true,
+     CURLOPT_ENCODING =&gt; "",
+     CURLOPT_MAXREDIRS =&gt; 10,
+     CURLOPT_TIMEOUT =&gt; 30,
+     CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+     CURLOPT_CUSTOMREQUEST =&gt; "POST",
+     CURLOPT_POSTFIELDS =&gt; "",
+     CURLOPT_HTTPHEADER =&gt; array(
+       "authorization: Bearer {token}"
+     ),
+   ));</p>
+<p>$response = curl_exec($curl);
+   $err = curl_error($curl);</p>
+<p>curl_close($curl);</p>
+<p>if ($err) {
+     echo "cURL Error #:" . $err;
+   } else {
+     echo $response;
+   }</p>
+<pre><code>
+##### Python:
+
+```import http.client
+
+   conn = http.client.HTTPSConnection(&quot;bluerockteladmin.test&quot;)
+
+   payload = &quot;&quot;
+
+   headers = { 'authorization': &quot;Bearer {token}&quot; }
+
+   conn.request(&quot;POST&quot;, &quot;/api/v1/customers?name=Soci%C3%A9t%C3%A9&amp;customerAccount=123456&quot;, payload, headers)
+
+   res = conn.getresponse()
+   data = res.read()
+
+   print(data.decode(&quot;utf-8&quot;))
+</code></pre>
+
+<h3 id="get-a-customer-from-customeraccount">Get a customer from customerAccount</h3>
+<p><strong>GET /api/v1/customerAccounts/{customerAccount}</strong></p>
               
             </div>
           </div>

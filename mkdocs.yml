@@ -1,10 +1,11 @@
-site_name: BlueRockTEL API
-site_url: https://bluerocktel-api.github.io
-site_description: BlueRockTEL API documentation
-site_author: Cyrille Georgel < cyrille.georgel@bluerocktel.com >
+site_name: Documentation BlueRockTEL en Français
+site_url: https://bluerocktel.github.io/documentation-fr/
+site_description: Documentation de BlueRockLTEL en langue française
+site_author: Cyrille Georgel < cyrille.georgel@bluerocktel.net >
 nav:
   - Home: index.md
-  - Customers: customers.md
+  - Préparer vos données pour l'intégration dans BlueRockTEL :
+      - 'Clients': bluerocktel_pack_clients.md
 theme:
   name: readthedocs
   custom_dir: override

@@ -2,7 +2,7 @@
 
 ---
 
-### Store a new customer
+### Store a new customer (test)
 
 **POST /api/v1/customers**
 

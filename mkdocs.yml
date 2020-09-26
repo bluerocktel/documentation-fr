@@ -5,6 +5,7 @@ site_author: Cyrille Georgel < cyrille.georgel@bluerocktel.net >
 nav:
   - Home: index.md
   - Préparer vos données pour l'intégration dans BlueRockTEL :
+      - 'Le pack BlueRockTEL': bluerocktel_pack.md
       - 'Clients': bluerocktel_pack_clients.md
 theme:
   name: readthedocs

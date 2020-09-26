@@ -53,6 +53,8 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Préparer vos données pour l'intégration dans BlueRockTEL</span></p>
                 <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../bluerocktel_pack/">Le pack BlueRockTEL</a>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Clients</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#compte-client">Compte client</a>
@@ -62,6 +64,36 @@
     <li class="toctree-l2"><a class="reference internal" href="#raison-sociale">Raison sociale</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#siret">SIRET</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#numero-de-tva-intracommunautaire">Numéro de TVA intracommunautaire</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#type-de-societe">Type de société</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#capital-social">Capital social</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#premiere-ligne-dadresse">Première ligne d'adresse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#seconde-ligne-dadresse">Seconde ligne d'adresse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#code-postal">Code Postal</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ville">Ville</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#site-web">Site Web</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#actif">Actif</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#revendeur">Revendeur</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#niveau-de-revendeur">Niveau de revendeur</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#facturer-la-tva">Facturer la TVA</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#appliquer-la-tva-auto-liquidee-operateur-arcep">Appliquer la TVA auto-liquidée (opérateur Arcep)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#client-sous-contrat-dastreinte">Client sous contrat d'astreinte</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#client-vip">Client VIP</a>
     </li>
     </ul>
                     </li>
@@ -102,14 +134,71 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="clients">Clients</h1>
-<h2 id="compte-client">Compte client</h2>
-<p>Compte vous permettant d'identifier le client. Par défaut, BlueRockTEL crée un compte de type 'CL0001' pour chaque client, mais vous pouvez choisir le format qui vous convient le mieux.</p>
-<h2 id="compte-comptable">Compte comptable</h2>
-<p>Identification du client en comptabilité.
-Il peut être identique au compte client mais ce n'est pas toujours le cas.</p>
-<h2 id="raison-sociale">Raison sociale</h2>
-<h2 id="siret">SIRET</h2>
+                <h2 id="clients">Clients</h2>
+<p>Le pack BlueRockTEL </p>
+<h3 id="compte-client">Compte client</h3>
+<p><em>customerAccount, string</em></p>
+<p>Il s'agit du compte vous permettant d'identifier le client.</p>
+<p>Par défaut, BlueRockTEL crée un compte de type 'CL0001' pour chaque client, mais vous pouvez choisir le format qui vous convient le mieux.</p>
+<p>Si vous n'utilisez pas de comptes clients, vous pouvez laisser cette colonne vide.</p>
+<h3 id="compte-comptable">Compte comptable</h3>
+<p><em>accountsReference, string</em></p>
+<p>Identification du client en comptabilité.</p>
+<p>À n'indiquer que s'il est nécessaire (notamment pour vos exports comptables) et différent du compte client.</p>
+<h3 id="raison-sociale">Raison sociale</h3>
+<p><em>name, string</em></p>
+<p>La colonne Raison sociale doit toujours être complétée.</p>
+<p>Elle peut être remplacée par le nom complet du client dans le cas d'une personne physique.</p>
+<h3 id="siret">SIRET</h3>
+<p><em>registrationNumber, string</em></p>
+<h3 id="numero-de-tva-intracommunautaire">Numéro de TVA intracommunautaire</h3>
+<p><em>taxRegistrationNumber, string</em></p>
+<h3 id="type-de-societe">Type de société</h3>
+<p><em>type</em></p>
+<h3 id="capital-social">Capital social</h3>
+<p><em>capital</em></p>
+<h3 id="premiere-ligne-dadresse">Première ligne d'adresse</h3>
+<p><em>mainAddressLine1</em></p>
+<p>Pour un client multisite, l'adresse à indiquer dans la fiche client est toujours l'adresse du siège social. Les adresses des différents sites ou établissements secondaires seront indiquées au niveau des dossiers clients.</p>
+<h3 id="seconde-ligne-dadresse">Seconde ligne d'adresse</h3>
+<p><em>mainAddressLine2</em></p>
+<h3 id="code-postal">Code Postal</h3>
+<p><em>postalCode</em></p>
+<h3 id="ville">Ville</h3>
+<p><em>mainAddressCity</em></p>
+<h3 id="site-web">Site Web</h3>
+<p><em>website</em></p>
+<p>Url du site web du client</p>
+<h3 id="actif">Actif</h3>
+<p><em>active: boolean, default true</em></p>
+<p>Cette colonne permet d'indiquer si le client est actif ou non.</p>
+<p>Indiquez 1 pour actif ou 0 pour inactif.</p>
+<h3 id="revendeur">Revendeur</h3>
+<p><em>isReseller: boolean, default false</em></p>
+<p>Cette colonne permet d'indiquer si le client agit comme un revendeur de vos produits et services.</p>
+<p>Indiquez 1 s'il est revendeur et 0 dans le cas contraire.</p>
+<h3 id="niveau-de-revendeur">Niveau de revendeur</h3>
+<p><em>resellerLevel, integer</em></p>
+<p>Dans le cas ou le client est revendeur, et si vous avez plusieurs niveaux de revendeurs, cette colonne vous permet d'indiquer à quel niveau il appartient.</p>
+<p>Cette information sera utile, par exemple, pour appliquer automatiquement des remises revendeurs.</p>
+<p>Cette colonne accepte un nombre entier, par exemple 1, 2 ou 3.</p>
+<h3 id="facturer-la-tva">Facturer la TVA</h3>
+<p><em>chargeVAT, boolean default true</em></p>
+<p>Cette colonne vous permet d'indiquer si vous facturez de la TVA à votre client ou non. Par exemple, si votre entreprise est établie en France et si votre client est établi dans un autre pays de l'Union Européenne, vous ne lui facturerez probablement pas la TVA.</p>
+<p>Indiquer 1 si vous facturez de la TVA à votre client, 0 dans le cas contraire.</p>
+<h3 id="appliquer-la-tva-auto-liquidee-operateur-arcep">Appliquer la TVA auto-liquidée (opérateur Arcep)</h3>
+<p><em>applyVATAutoReverseOperators, boolean default false</em></p>
+<p>Si à la fois votre entreprise et votre client sont opérateurs déclarés auprès de l'Arcep, cette colonne vous permet d'indiquer que vous souhaitez appliquer le mécanisme de TVA auto-liquidée sur les services Telecom.</p>
+<p>Indiquer 1 si vous souhaitez appliquer le mécanisme de TVA auto-liquidée pour ce client, 0 dans le cas contraire.</p>
+<h3 id="client-sous-contrat-dastreinte">Client sous contrat d'astreinte</h3>
+<p><em>onCallDuty, boolean default false</em></p>
+<p>Cette colonne vous permet d'indiquer si votre client bénéficie d'un contrat d'astreinte.</p>
+<p>Cette information est utile si, par exemple, votre système de téléphonie interroge l'API de BlueRockTEL pour des routages d'appels entrants.</p>
+<p>Indiquer 1 si votre client bénéficie d'un contrat d'astreinte, 0 dans le cas contraire.</p>
+<h3 id="client-vip">Client VIP</h3>
+<p><em>vip, boolean default false</em></p>
+<p>Cette colonne vous permet d'indiquer si votre client à un statut VIP.</p>
+<p>Cette information est utile si, par exemple, votre système de téléphonie interroge l'API de BlueRockTEL pour des routages entrants. Un usage typique est de reconnaître le numéro de l'appelant et de l'envoyer vers le support prioritaire.</p>
               
             </div>
           </div>
@@ -119,7 +208,7 @@ Il peut être identique au compte client mais ce n'est pas toujours le cas.</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         
         
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../bluerocktel_pack/" class="btn btn-neutral" title="Le pack BlueRockTEL"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         
     </div>
     
@@ -145,7 +234,7 @@ Il peut être identique au compte client mais ce n'est pas toujours le cas.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../bluerocktel_pack/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>

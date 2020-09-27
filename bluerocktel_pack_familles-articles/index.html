@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Cyrille Georgel < cyrille.georgel@bluerocktel.net >">
+  <link rel="canonical" href="https://bluerocktel.github.io/documentation-fr/bluerocktel_pack_familles-articles/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Bluerocktel pack familles articles - BlueRockTEL (FR)</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Bluerocktel pack familles articles";
+    var mkdocs_page_input_path = "bluerocktel_pack_familles-articles.md";
+    var mkdocs_page_url = "/documentation-fr/bluerocktel_pack_familles-articles/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> BlueRockTEL (FR)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Intégration</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../bluerocktel_pack/">Le pack BlueRockTEL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bluerocktel_pack_clients/">Clients</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bluerocktel_pack_contacts/">Contacts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bluerocktel_pack_coordonnees-bancaires/">Coordonnées bancaires</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">BlueRockTEL (FR)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Bluerocktel pack familles articles</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="familles-darticles">Familles d'articles</h2>
+<p>BlueRockTEL vous permet d'organiser les articles de votre catalogue en familles d'articles, puis en sous-familles.</p>
+<h3 id="code">Code</h3>
+<p><em>code, string</em></p>
+<p>Cette colonne vous permet d'identifier votre famille par un code.</p>
+<h3 id="nom">Nom</h3>
+<p><em>name, string</em></p>
+<p>Cette colonne contient le nom de la famille.</p>
+<h3 id="compte-de-produit">Compte de produit</h3>
+<p><em>revenueAccount, string</em></p>
+<p>Cette colonne contient le compte de produit correspondant à la famille d'articles. </p>
+<p>Cette information est utile notamment pour les exports vers la comptabilité.</p>
+<h3 id="compte-de-charge">Compte de charge</h3>
+<p><em>expenseAccount, string</em></p>
+<p>Cette colonne contient le compte de charge correspondant à la famille d'articles.</p>
+<p>Cette information est utile notamment pour les exports vers la comptabilité.</p>
+<h3 id="chiffre-daffaires">Chiffre d'affaires</h3>
+<p><em>turnover, boolean, default true</em></p>
+<p>Il peut arriver que vous soyez amené à facturer certains articles qui n'entrent pas dans votre chiffre d'affaires : c'est notamment le cas des dépôts de garantie.</p>
+<p>Cette colonne vous permet d'indiquer si la famille d'articles doit entrer dans le chiffre d'affaires ou non.</p>
+<p>Indiquer 1 si la famille doit entrer dans le chiffre d'affaires, ou 0 dans le cas contraire.</p>
+<h3 id="famille-concernee-par-lauto-liquidation-de-tva-operateurs-arcep">Famille concernée par l'auto-liquidation de TVA (opérateurs ARCEP)</h3>
+<p><em>VATAutoReverseOperators</em></p>
+<p>Indiquer 1 si vous souhaitez appliquer le mécanisme de TVA auto-liquidée pour cette famille, 0 dans le cas contraire.</p>
+<h3 id="appliquer-automatiquement-les-frais-de-livraison-pour-cette-famille">Appliquer automatiquement les frais de livraison pour cette famille</h3>
+<p><em>autoApplyDeliveryFees, boolean, default false</em></p>
+<p>Vous pouvez configurer BlueRockTEL pour appliquer automatiquement des frais de livraison lors de la création des devis, contrats puis factures.</p>
+<p>Cette colonne vous permet d'indiquer si la famille d'articles est concernée ou non par l'application automatique des frais de livraison.</p>
+<p>Indiquer 1 pour appliquer automatiquement les frais de livraison, 0 dans le cas contraire.</p>
+<h3 id="appliquer-automatiquement-les-frais-dexploitation-pour-cette-famille-indiquer-le-taux">Appliquer automatiquement les frais d'exploitation pour cette famille (indiquer le taux)</h3>
+<p>Vous pouvez configurer BlueRockTEL pour délivrer automatiquement des rapports de rémunération pour vos commerciaux, que ceux-ci soient salariés ou indépendants, en combinaison avec un apporteur d'affaires (rémunération partagée ou non).</p>
+<p>La rémunération commerciale peut être calculée soit sur le chiffre d'affaires, soit sur la marge.</p>
+<p>Dans le cas d'une rémunération commerciale calculée sur la marge, il peut être intéressant de prévoir des frais d'exploitation : en effet, si la marge brute est le différentiel entre votre prix d'achat et votre prix de vente, votre entreprise supporte d'autres frais (facturation, support...)</p>
+<p>Les frais d'exploitation pouvant être très variables d'une famille à une autre, BlueRockTEL vous permet d'indiquer un taux différent pour chaque famille d'articles.</p>
+<p>Cette colonne vous permet d'indiquer le taux de frais d'exploitation applicable à la famille d'articles.</p>
+<h2 id="catalogue">Catalogue</h2>
+<p><em>catalog, boolean, default true</em></p>
+<p>Cette colonne vous permet d'indiquer si la famille d'articles soit apparaître dans le catalogue.</p>
+<p>Indiquer 1 ou vrai, ou 0 pour faux.</p>
+              
+            </div>
+          </div>
+          
+<footer>
+    
+
+    <hr/>
+
+    <div role="contentinfo">
+        <!-- Copyright etc -->
+        
+    </div>
+
+    Built with Passion at <a href="https://bluerocktel.com/?utm_source=bluerocktel-api-documentation" target="_blank">BlueRockTEL</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

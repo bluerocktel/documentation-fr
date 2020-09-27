@@ -57,6 +57,8 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Clients</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#marque">Marque</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#compte-client">Compte client</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#compte-comptable">Compte comptable</a>
@@ -70,6 +72,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#type-de-societe">Type de société</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#capital-social">Capital social</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#code-activite-naf">Code activité (NAF)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#secteur-dactivite">Secteur d'activité</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#origine">Origine</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#premiere-ligne-dadresse">Première ligne d'adresse</a>
     </li>
@@ -89,11 +97,17 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#facturer-la-tva">Facturer la TVA</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#appliquer-la-tva-auto-liquidee-operateur-arcep">Appliquer la TVA auto-liquidée (opérateur Arcep)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#appliquer-la-tva-auto-liquidee-operateur-arcep">Appliquer la TVA auto-liquidée (opérateur ARCEP)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#langue-du-client">Langue du client</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#client-sous-contrat-dastreinte">Client sous contrat d'astreinte</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#client-vip">Client VIP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#regrouper-les-factures">Regrouper les factures</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#financeur">Financeur</a>
     </li>
     </ul>
                     </li>
@@ -140,6 +154,10 @@
               
                 <h2 id="clients">Clients</h2>
 <p>En savoir plus sur le <a href="https://bluerocktel.github.io/documentation-fr/bluerocktel_pack/" title="Pack BlueRockTEL, intégration de vos données dans BlueRockTEL">pack BlueRockTEL</a></p>
+<h3 id="marque">Marque</h3>
+<p><em>brand_id, integer, default 1</em></p>
+<p>Certains comptes BlueRockTEL sont configurés pour facturer à partir de plusieurs marques (par exemple si vous avez des <em>brandings</em> différents pour distinguer les activités Telecom des activités informatiques).</p>
+<p>Si c'est votre cas vous pouvez indiquer dans cette colonne à quelle marque doit être rattaché le client.</p>
 <h3 id="compte-client">Compte client</h3>
 <p><em>customerAccount, string</em></p>
 <p>Il s'agit du compte vous permettant d'identifier le client.</p>
@@ -161,6 +179,14 @@
 <p><em>type</em></p>
 <h3 id="capital-social">Capital social</h3>
 <p><em>capital</em></p>
+<h3 id="code-activite-naf">Code activité (NAF)</h3>
+<p><em>activityCode, string</em></p>
+<h3 id="secteur-dactivite">Secteur d'activité</h3>
+<p><em>sector_id, integer</em></p>
+<p>Cette colonne vous permet d'indiquer le secteur d'activité du client.</p>
+<h3 id="origine">Origine</h3>
+<p><em>origin_id, integer</em></p>
+<p>Cette colonne vous permet d'indiquer le canal par lequel vous avec acquis le client.</p>
 <h3 id="premiere-ligne-dadresse">Première ligne d'adresse</h3>
 <p><em>mainAddressLine1</em></p>
 <p>Pour un client multisite, l'adresse à indiquer dans la fiche client est toujours l'adresse du siège social. Les adresses des différents sites ou établissements secondaires seront indiquées au niveau des dossiers clients.</p>
@@ -190,19 +216,34 @@
 <p><em>chargeVAT, boolean default true</em></p>
 <p>Cette colonne vous permet d'indiquer si vous facturez de la TVA à votre client ou non. Par exemple, si votre entreprise est établie en France et si votre client est établi dans un autre pays de l'Union Européenne, vous ne lui facturerez probablement pas la TVA.</p>
 <p>Indiquer 1 si vous facturez de la TVA à votre client, 0 dans le cas contraire.</p>
-<h3 id="appliquer-la-tva-auto-liquidee-operateur-arcep">Appliquer la TVA auto-liquidée (opérateur Arcep)</h3>
+<h3 id="appliquer-la-tva-auto-liquidee-operateur-arcep">Appliquer la TVA auto-liquidée (opérateur ARCEP)</h3>
 <p><em>applyVATAutoReverseOperators, boolean default false</em></p>
-<p>Si à la fois votre entreprise et votre client sont opérateurs déclarés auprès de l'Arcep, cette colonne vous permet d'indiquer que vous souhaitez appliquer le mécanisme de TVA auto-liquidée sur les services Telecom.</p>
+<p>Si à la fois votre entreprise et votre client sont opérateurs déclarés auprès de l'ARCEP, cette colonne vous permet d'indiquer que vous souhaitez appliquer le mécanisme de TVA auto-liquidée sur les services Telecom.</p>
 <p>Indiquer 1 si vous souhaitez appliquer le mécanisme de TVA auto-liquidée pour ce client, 0 dans le cas contraire.</p>
+<h3 id="langue-du-client">Langue du client</h3>
+<p><em>language, string</em></p>
+<p>Cette colonne vous permet d'indiquer la langue du client.</p>
+<p>Indiquer 'fr' pour un client de langue française ou 'en' pour un client de langue anglaise.</p>
 <h3 id="client-sous-contrat-dastreinte">Client sous contrat d'astreinte</h3>
 <p><em>onCallDuty, boolean default false</em></p>
 <p>Cette colonne vous permet d'indiquer si votre client bénéficie d'un contrat d'astreinte.</p>
 <p>Cette information est utile si, par exemple, votre système de téléphonie interroge l'API de BlueRockTEL pour des routages d'appels entrants.</p>
-<p>Indiquer 1 si votre client bénéficie d'un contrat d'astreinte, 0 dans le cas contraire.</p>
+<p>Indiquer 1 si votre client bénéficie d'un contrat d'astreinte, 0 dans le cas contraire. Vous pouvez également laisser la colonne vide.</p>
 <h3 id="client-vip">Client VIP</h3>
 <p><em>vip, boolean default false</em></p>
 <p>Cette colonne vous permet d'indiquer si votre client à un statut VIP.</p>
 <p>Cette information est utile si, par exemple, votre système de téléphonie interroge l'API de BlueRockTEL pour des routages entrants. Un usage typique est de reconnaître le numéro de l'appelant et de l'envoyer vers le support prioritaire.</p>
+<p>Indiquer 1 si votre client est un financeur, 0 dans le cas contraire. Vous pouvez également laisser la colonne vide.</p>
+<h3 id="regrouper-les-factures">Regrouper les factures</h3>
+<p><em>mergeInvoices, boolean default false</em></p>
+<p>BlueRockTEL vous permet de créer autant de dossiers de facturation que nécessaire pour chaque client : cela vous permet de distinguer soit plusieurs sites, soit plusieurs types de services (par exemple un dossier pour la téléphonie fixe et un autre pour la téléphonie mobile).</p>
+<p>Dès lors, vous pouvez décider, pour chaque client, si vous souhaitez envoyer une facture distincte pour chaque dossier, ou bien une facture unique regroupant les dossiers.</p>
+<p>Cette colonne vous permet de le préciser.</p>
+<p>Indiquer 1 si vous souhaitez regrouper les factures du client, 0 dns le cas contraire.</p>
+<h3 id="financeur">Financeur</h3>
+<p><em>payer, boolean default false</em></p>
+<p>Cette colonne vous permet d'indiquer si le client a un rôle de financeur pour d'autres clients. Par exemple, s'il s'agit un établissement de leasing ou d'un organisme financeur dans le cadre de la formation professionnelle.</p>
+<p>Indiquer 1 si le client est un financeur, 0 dans le cas contraire. Vous pouvez également laisser la colonne vide.</p>
               
             </div>
           </div>

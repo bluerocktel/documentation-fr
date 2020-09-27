@@ -67,7 +67,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#bic">BIC</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_1"></a>
+    <li class="toctree-l2"><a class="reference internal" href="#mandat-de-prelevement-sepa">Mandat de prélèvement SEPA</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#date-de-signature-du-mandat">Date de signature du mandat</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nombre-de-prelevements">Nombre de prélèvements</a>
     </li>
     </ul>
                     </li>
@@ -113,17 +117,25 @@
                 <h2 id="coordonnees-bancaires">Coordonnées bancaires</h2>
 <p>En savoir plus sur le <a href="https://bluerocktel.github.io/documentation-fr/bluerocktel_pack/" title="Pack BlueRockTEL, intégration de vos données dans BlueRockTEL">pack BlueRockTEL</a></p>
 <h3 id="client">Client</h3>
-<p><em>customer_id, integer</em></p>
+<p><em>fileable_type, string, 'App\Customer'</em></p>
+<p><em>fileable_id, integer</em></p>
 <p>Cette colonne vous permet d'indiquer à quel client les coordonnées bancaires sont rattachées.</p>
 <p>Nous vous invitons à indiquer dans cette colonne la raison sociale du client, orthographiée de la même façon qu'elle l'est dans la table des clients.</p>
 <h3 id="iban">IBAN</h3>
 <p><em>IBAN, string</em></p>
-<p>Cette colonne vous permet d'indiquer l'IBAN du client.</p>
+<p>Cette colonne vous permet d'indiquer l'IBAN du client. C'est une information obligatoire pour que BlueRockTEL puisse produire le fichier de prélèvements SEPA.</p>
 <h3 id="bic">BIC</h3>
 <p><em>BIC, string</em></p>
-<p>Cette colonne vous permet d'indiquer le code BIC associé à l'IBAN du client.</p>
-<h3 id="_1"></h3>
-<p>id  customer_id IBAN    BIC mandateIdentification   DtOfSgntr   numberOfDebit</p>
+<p>Cette colonne vous permet d'indiquer le code BIC associé à l'IBAN du client. C'est une information obligatoire pour que BlueRockTEL puisse produire le fichier de prélèvements SEPA.</p>
+<h3 id="mandat-de-prelevement-sepa">Mandat de prélèvement SEPA</h3>
+<p><em>mandateIdentification, string</em></p>
+<p>Cette colonne vous permet d'indiquer la référence unique de mandat du client. C'est une information obligatoire pour que BlueRockTEL puisse produire le fichier de prélèvements SEPA.</p>
+<h3 id="date-de-signature-du-mandat">Date de signature du mandat</h3>
+<p><em>DateOfSgntr, string</em></p>
+<p>Cette colonne vous permet d'indiquer la date de signature du mandat. C'est une information obligatoire pour que BlueRockTEL puisse produire le fichier de prélèvements SEPA.</p>
+<h3 id="nombre-de-prelevements">Nombre de prélèvements</h3>
+<p><em>numberOfDebit, integer</em></p>
+<p>Cette colonne vous permet d'indiquer le nombre de prélèvements opérés sur ces coordonnées bancaires dans le passé.</p>
               
             </div>
           </div>

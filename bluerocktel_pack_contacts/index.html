@@ -77,13 +77,23 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#service">Service</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#actif">Actif</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#representant-legal">Représentant légal</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#destinataire-des-factures">Destinataire des factures</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#destinataire-des-newsletters">Destinataire des newsletters</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#commentaire">Commentaire</a>
+    <li class="toctree-l2"><a class="reference internal" href="#acces-a-lespace-clients">Accès à l'espace clients</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#espace-client-admin-factures-releves-documents">Espace client : admin (factures, relevés, documents)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#espace-client-services-avances-configuration-des-services-telecom">Espace client : services avancés (configuration des services Telecom)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#espace-client-service-sms">Espace client : service SMS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contact-technique">Contact technique</a>
     </li>
     </ul>
                     </li>
@@ -131,7 +141,8 @@
                 <h2 id="contacts">Contacts</h2>
 <p>En savoir plus sur le <a href="https://bluerocktel.github.io/documentation-fr/bluerocktel_pack/" title="Pack BlueRockTEL, intégration de vos données dans BlueRockTEL">pack BlueRockTEL</a></p>
 <h3 id="client">Client</h3>
-<p><em>customer_id, integer</em></p>
+<p><em>contactable_type, string, 'App\Customer' or 'App\Prospect'</em></p>
+<p><em>contactable_id, integer</em></p>
 <p>Cette colonne vous permet d'indiquer à quel client le contact est rattaché.</p>
 <p>Nous vous invitons à indiquer dans cette colonne la raison sociale du client, orthographiée de la même façon qu'elle l'est dans la table des clients.</p>
 <h3 id="civilite">Civilité</h3>
@@ -149,13 +160,13 @@
 <p><em>lastName, string</em></p>
 <p>Cette colonne vous permet d'indiquer le nom du contact.</p>
 <h3 id="adresse-email">Adresse email</h3>
-<p><em>emailAddress</em></p>
+<p><em>emailAddress, string</em></p>
 <p>Cette colonne vous permet d'indiquer l'adresse email du contact.</p>
 <h3 id="telephone-mobile">Téléphone mobile</h3>
-<p><em>mobilePhone</em></p>
+<p><em>mobilePhone, string</em></p>
 <p>Cette colonne vous permet d'indiquer le téléphone mobile du contact.</p>
 <h3 id="telephone-fixe">Téléphone fixe</h3>
-<p><em>landlinePhone</em></p>
+<p><em>landlinePhone, string</em></p>
 <p>Cette colonne vous permet d'indiquer le téléphone fixe du contact.</p>
 <h3 id="role">Rôle</h3>
 <p><em>role</em></p>
@@ -163,9 +174,14 @@
 <h3 id="service">Service</h3>
 <p><em>service</em></p>
 <p>Cette colonne...</p>
+<h3 id="actif">Actif</h3>
+<p><em>active, boolean, default true</em></p>
+<p>Cette colonne vous permet de préciser si le contact est actif ou non.</p>
+<p>Indiquer 1 pour actif ou 0 pour inactif.</p>
 <h3 id="representant-legal">Représentant légal</h3>
 <p><em>legalRepresentative</em></p>
-<p>Cette colonne...</p>
+<p>Cette colonne vous permet de préciser si le contact est un représentant légal de la société ou non.</p>
+<p>Indiquer 1 pour représentant légal ou 0 dans le cas contraire.</p>
 <h3 id="destinataire-des-factures">Destinataire des factures</h3>
 <p><em>invoicesRecipient, boolean default true</em></p>
 <p>Cette colonne vous permet d'indiquer si le contact recevra les factures.</p>
@@ -174,9 +190,33 @@
 <p><em>newslettersRecipient</em></p>
 <p>Cette colonne vous permet d'indiquer si le contact recevra les newsletters.</p>
 <p>Indiquez 1 s'il doit recevoir les newsletters et 0 dans le cas contraire.</p>
+<h3 id="acces-a-lespace-clients">Accès à l'espace clients</h3>
+<p><em>myClient, boolean, default true</em></p>
+<p>Cette colonne vous peremt d'indiquer si le contact disposera d'un accès à l'espace clients ou non.</p>
+<h3 id="espace-client-admin-factures-releves-documents">Espace client : admin (factures, relevés, documents)</h3>
+<p><em>myClientAdmin, boolean, default true</em></p>
+<p>Cette colonne vous permet d'indiquer si le contact, une fois connecté à l'espace clients, pourra accéder aux factures, aux relevés de consommations et aux documents administratifs partagés.</p>
+<p>Indiquer 1 ou vrai ou 0 pour faux.</p>
+<h3 id="espace-client-services-avances-configuration-des-services-telecom">Espace client : services avancés (configuration des services Telecom)</h3>
+<p><em>myClientAdvancedServices</em></p>
+<p>L'espace clients BlueRockTEL peut être configuré de telle sorte qu'il donne au client la possibilité de configurer ses services Telecom : par exemple modifier les tables de routages horaires, géographiques ou intelligents pour les appels entrants. </p>
+<p>Cette colonne vous permet d'indiquer si le contact, une fois connecté à l'espace clients, pourra accéder à la configuration des services Telecom du client.</p>
+<p>Indiquer 1 pour vrai ou 0 pour faux.</p>
+<h3 id="espace-client-service-sms">Espace client : service SMS</h3>
+<p>L'espace clients BlueRockTEL peut être configuré de telle sorte qu'il donne au client la possibilité d'envoyer des SMS.</p>
+<p>Cette colonne vous permet d'indiquer si le contact, une fois connecté à l'espace clients, pourra accéder au service d'envoi de SMS.</p>
+<p>Indiquer 1 pour vrai ou 0 pour faux.</p>
+<h3 id="contact-technique">Contact technique</h3>
+<p>BlueRockTEL vous permet d'indiquer si le contact est contact technique ou non, notamment pour partager avec lui certaines informations et alertes.</p>
+<p>Dans l'espace clients, le contact technique accèdera au ticketing (support).</p>
+<p>Indiquer 1 pour vrai ou 0 pour faux.</p>
+<h2 id="acces-api">Accès API</h2>
+<p>BlueRockTEL vous permet de donner à certains contacts un accès API à l'espace clients.</p>
+<p>Une bonne pratique est souvent de ne pas donner un accès API aux contacts réels de l'entreprise, c'est-à-dire les utilisateurs de votre espace clients, mais de créer un contact spécifique pour l'accès API.</p>
+<p>Indiquer 1 pour vrai ou 0 pour faux.</p>
 <h3 id="commentaire">Commentaire</h3>
 <p><em>comment, text</em></p>
-<p>Cette colonne vous permet d'ajouter un commentaire.</p>
+<p>Cette colonne vous permet d'ajouter un commentaire sur le contact.</p>
               
             </div>
           </div>

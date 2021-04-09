@@ -7,6 +7,8 @@ nav:
   - Préparer vos données pour l'intégration dans BlueRockTEL :
       - 'Le pack BlueRockTEL': bluerocktel_pack.md
       - 'Clients': bluerocktel_pack_clients.md
+    - Utilisation de BlueRockTEL au quotidien :
+      - 'Le dossier client': dossier_client.md
 theme:
   name: readthedocs
   custom_dir: override
